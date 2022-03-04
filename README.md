@@ -6,4 +6,4 @@
 <p>Vinicius Canovas</p>
 <p>Flávio Granado</p>
 <p></p>
-<p strong>O sistema vai auxiliar o público que deseja adotar um bichinho ou encontrar um adotante, catalogando os pets da região escolhida com filtros</p>
+<h3 strong>O sistema vai auxiliar o público que deseja adotar um bichinho ou encontrar um adotante, catalogando os pets da região escolhida com filtros</h3>
