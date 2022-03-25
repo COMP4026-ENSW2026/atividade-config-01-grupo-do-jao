@@ -1,0 +1,22 @@
+@startuml
+Entity adotante{
+email: String
+password: String
+cpf: int
+dat_nascimento: date
+telefone: int
+}
+Entity doador{
+email: String
+password: String
+cpf: int
+dat_nascimento: date
+telefone: int
+}
+adotante--*doador
+Entity pet{
+raca: String
+descricao: String
+}
+doador--|>pet
+@enduml
