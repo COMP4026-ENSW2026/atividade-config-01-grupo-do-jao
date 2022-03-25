@@ -1,0 +1,11 @@
+@startuml
+
+
+:adotante: --> (listar pets)
+:adotante: --> (registrar/logar)
+:adotante: --> (iniciar chat)
+:doador: --> (cadastrar pets)
+:doador: --> (registrar/logar)
+
+
+@enduml
