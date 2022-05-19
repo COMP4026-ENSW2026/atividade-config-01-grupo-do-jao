@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pets', function (Blueprint $table) {
+        Schema::create('pets', function (Blueprint $table){
             $table->id();
             $table->string('name');
             $table->string('specie');
@@ -21,10 +21,10 @@ return new class extends Migration
             $table->string('color');
             $table->string('size');
             $table->string('meters');
-            $table->unsignedBigInteger('doador_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
-            $table->foreign('doador_id')->references('id')->on('doadores')->nullable();
+            $table->foreign('user_id')->references('id')->on('doadores')->nullable();
         });
     }
 
