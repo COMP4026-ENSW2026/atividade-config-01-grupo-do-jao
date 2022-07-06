@@ -2,7 +2,7 @@
 
 **Persona 2:** Frederico, o adotante, Solteiro, busca por companhia de um animal carinhoso e gosta de cachorros. O mesmo tem interesse por um cachorro que possa fazer uma boa caminhada e correr atras da bolinha.
 
-**Persona 3:** As Pessoas que oferecem ajuda e cuidados para auxiliar quem está adotando e aos pets.
+**Persona 3:** As Pessoas (ajudantes) que oferecem ajuda e cuidados para auxiliar quem está adotando e aos pets.
 
 A persona como adotante, ela quer um site simples e prático para que possa visualizar e escolher um pet, com imagens, filtros e descrições. Um sistema que não trave, que funcione tão bem quanto enviar uma mensagem no WhatsApp. 
 
