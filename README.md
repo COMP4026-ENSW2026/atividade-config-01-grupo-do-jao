@@ -7,4 +7,4 @@
 <p>Flávio Granado</p>
 <p>Leonardo Moraes da Silva</p>
 <p></p>
-<h3 strong>O sistema vai auxiliar o público que deseja adotar um bichinho ou encontrar um adotante, catalogando os pets da região escolhida com filtros</h3>
+<h3 strong>O sistema vai auxiliar o público que deseja adotar um bichinho ou encontrar um adotante, catalogando os pets da região escolhida com filtros. Além disso o sistema ira permitir buscas e interações mais fáceis e ágeis, fazendo com que a procura por um bichinho seja mais divertida!</h3>
