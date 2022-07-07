@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 class PetsController extends Controller
 {
     public function index(){
-        $pets = Pet::all('id','name');
+        $pets = Pet::all();
 
-        return view('pets.index', [
-            'pets' => $pets,
+        return view('dashboard', [
+            'pets' => $pets
         ]);
     }
 
@@ -21,24 +21,22 @@ class PetsController extends Controller
     }
 
     public function store(Request $request){
+        // $pets = Pet::all();
         $request->validate([
             'name' => 'required',
             'specie' => 'required',
+            'subspecie' => 'required',
             'color' => 'required',
             'size' => 'required|max:2',
+            'meters' => 'required|max:3'
         ]);
 
-        $pet = Pet::create([
-            'name' => $request['name'],
-            'specie' => $request['specie'],
-            'color' => $request['color'],
-            'size' => $request['size'],
-        ]);
+        $pet = Pet::create($request->all());
 
-        return view('pets.show', [
-            'pet' => $pet
-        ]);
+
+        return redirect()->route('dashboard');
     }
+    
 
     public function show(Pet $pet ){
         return view('pets.show', [

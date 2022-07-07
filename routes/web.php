@@ -17,15 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [App\Http\Controllers\PetsController::class, 'index'])
+->middleware(['auth'])
+->name('dashboard');
 
 // Route::get('/register-pet', function () {
 //     return view('pets/register-pet');
 // })->middleware(['auth'])->name('register-pet');
 
 Route::get('/register-pet', [App\Http\Controllers\PetsController::class, 'create'])
+->middleware(['auth'])
+->name('register-pet');
+
+Route::post('/register-pet', [App\Http\Controllers\PetsController::class, 'store'])
 ->middleware(['auth'])
 ->name('register-pet');
 

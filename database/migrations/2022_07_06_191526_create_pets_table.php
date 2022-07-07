@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('color');
             $table->string('size');
             $table->string('meters');
-            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }
