@@ -16,6 +16,11 @@
                         {{ __('Inicio') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('register-pet')" :active="request()->routeIs('register-pet')">
+                        {{ __('Registrar') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
