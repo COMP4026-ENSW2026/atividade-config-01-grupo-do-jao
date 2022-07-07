@@ -33,4 +33,8 @@ Route::post('/register-pet', [App\Http\Controllers\PetsController::class, 'store
 ->middleware(['auth'])
 ->name('register-pet');
 
+Route::get('/dashboard/delete/{id}',[\App\Http\Controllers\PetsController::class,'delete'])
+->middleware(['auth'])
+->name('delete-pet');
+
 require __DIR__.'/auth.php';

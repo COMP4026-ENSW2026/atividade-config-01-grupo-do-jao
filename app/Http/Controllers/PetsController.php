@@ -21,7 +21,6 @@ class PetsController extends Controller
     }
 
     public function store(Request $request){
-        // $pets = Pet::all();
         $request->validate([
             'name' => 'required',
             'specie' => 'required',
@@ -33,14 +32,18 @@ class PetsController extends Controller
 
         $pet = Pet::create($request->all());
 
-
         return redirect()->route('dashboard');
     }
-    
+
 
     public function show(Pet $pet ){
         return view('pets.show', [
             'pet' => $pet
         ]);
+    }
+
+    public function delete($id){
+        Pet::find($id)->delete();
+        return redirect()->route('dashboard');
     }
 }
