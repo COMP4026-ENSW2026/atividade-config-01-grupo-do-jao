@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Inicio') }}
+            {{ __('Pets Adotados') }}
         </h2>
     </x-slot>
     
@@ -30,13 +30,6 @@
                                             <td class="px-8 py-4">{{ $pet->subspecie }}</td>
                                             <td class="px-8 py-4">{{ $pet->color }}</td>
                                             <td class="px-8 py-4">{{ $pet->size }}</td>
-                                            <td>
-                                                <a style="color: red" href="{{ route('adotar-pet', $pet->id) }}">
-                                                    <button  class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                                        Adotar
-                                                    </button>
-                                                </a>
-                                            </td>
                                         </tr>
                                     </table>
                                 </h1>
@@ -47,13 +40,5 @@
             </div>
         </div>
     @endforeach
-
-    <div class="grid justify-items-center py-10">
-        <div>
-            <button  class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                <a href="{{ route('register-pet') }}">Registrar Novo</a>
-            </button>    
-        </div>
-    </div>
         
 </x-app-layout>

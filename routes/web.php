@@ -33,8 +33,16 @@ Route::post('/register-pet', [App\Http\Controllers\PetsController::class, 'store
 ->middleware(['auth'])
 ->name('register-pet');
 
-Route::get('/dashboard/delete/{id}',[\App\Http\Controllers\PetsController::class,'delete'])
+Route::get('/dashboard/adotar/{id}',[\App\Http\Controllers\PetsController::class,'adotar'])
 ->middleware(['auth'])
-->name('delete-pet');
+->name('adotar-pet');
+
+Route::get('/pets/adotado',[\App\Http\Controllers\PetsController::class,'show_adotado'])
+->middleware(['auth'])
+->name('adotado-pet');
+
+Route::get('/pets/doado',[\App\Http\Controllers\PetsController::class,'show_doado'])
+->middleware(['auth'])
+->name('doado-pet');
 
 require __DIR__.'/auth.php';
