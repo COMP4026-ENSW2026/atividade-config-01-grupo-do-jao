@@ -23,6 +23,8 @@ class PetsController extends Controller
     }
 
     public function store(Request $request){
+        $user_id = auth()->user()->id;
+
         $request->validate([
             'name' => 'required',
             'specie' => 'required',
@@ -32,7 +34,15 @@ class PetsController extends Controller
             'meters' => 'required|max:3'
         ]);
 
-        $pet = Pet::create($request->all());
+        $pet = Pet::create([
+        'name' => $request->name,
+        'specie' => $request->specie,
+        'subspecie'=> $request->subspecie,
+        'color'=> $request->color,
+        'size'=>$request->size,
+        'meters'=>$request->meters,
+        'user_id' => $user_id
+    ]);
 
         return redirect()->route('dashboard');
     }
@@ -57,6 +67,15 @@ class PetsController extends Controller
             'user_id' => $user_id
         ]);
 
+        $edit = Doado::create([
+            'name_pet' => $pet->name,
+            'specie' => $pet->specie,
+            'subspecie'=>$pet->subspecie,
+            'color' => $pet->color,
+            'size' => $pet->size,
+            'user_id' => $pet->user_id
+        ]);
+
         $pet->delete();
 
         return redirect()->route('dashboard');
@@ -70,8 +89,8 @@ class PetsController extends Controller
     }
 
     public function show_doado(){
-        $pets = Pet::all();
         $user_id = auth()->user()->id;
+        $pets = Doado::where('user_id', 'like', $user_id)->get();
 
         return view('pets.doado',['pets' => $pets]);
     }

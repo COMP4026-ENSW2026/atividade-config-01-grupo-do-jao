@@ -25,7 +25,7 @@
                                         <th class="text-left px-8 py-4">Tamanho</th>
                                         </tr>
                                         <tr>
-                                            <td class="px-8 py-4">{{ $pet->name }}</td>
+                                            <td class="px-8 py-4">{{ $pet->name_pet }}</td>
                                             <td class="px-8 py-4">{{ $pet->specie }}</td>
                                             <td class="px-8 py-4">{{ $pet->subspecie }}</td>
                                             <td class="px-8 py-4">{{ $pet->color }}</td>

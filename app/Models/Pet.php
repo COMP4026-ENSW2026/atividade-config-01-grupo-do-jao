@@ -16,5 +16,6 @@ class Pet extends Model
         'color',
         'size',
         'meters',
+        'user_id'
     ];
 }
