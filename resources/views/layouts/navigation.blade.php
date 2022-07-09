@@ -31,6 +31,11 @@
                         {{ __('Doados') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('historico-pet')" :active="request()->routeIs('historico-pet')">
+                        {{ __('Historico') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
@@ -60,7 +65,7 @@
                             </x-dropdown-link>
                         </form>
                     </x-slot>
-                    
+
                 </x-dropdown>
             </div>
 

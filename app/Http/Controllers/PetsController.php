@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Pet;
 use App\Models\Doado;
 use App\Models\Adotado;
+use App\Models\Historico;
 use Illuminate\Http\Request;
 
 class PetsController extends Controller
@@ -49,14 +50,25 @@ class PetsController extends Controller
 
 
     public function show(Pet $pet ){
+        $pet = Pet::find($id);
         return view('pets.show', [
             'pet' => $pet
         ]);
     }
 
+
     public function adotar($id){
         $pet = Pet::find($id);
         $user_id = auth()->user()->id;
+
+        $edit = Historico::create([
+            'name_pet' => $pet->name,
+            'specie' => $pet->specie,
+            'subspecie'=>$pet->subspecie,
+            'color' => $pet->color,
+            'size' => $pet->size,
+            'user_id' => $user_id
+        ]);
 
         $edit = Adotado::create([
             'name_pet' => $pet->name,
@@ -93,6 +105,12 @@ class PetsController extends Controller
         $pets = Doado::where('user_id', 'like', $user_id)->get();
 
         return view('pets.doado',['pets' => $pets]);
+    }
+
+    public function show_historico(){
+        $pets = Historico::all();
+
+        return view('pets.historico',['pets' => $pets]);
     }
 
 }

@@ -45,4 +45,8 @@ Route::get('/pets/doado',[\App\Http\Controllers\PetsController::class,'show_doad
 ->middleware(['auth'])
 ->name('doado-pet');
 
+Route::get('/pets/historico',[\App\Http\Controllers\PetsController::class,'show_historico'])
+->middleware(['auth'])
+->name('historico-pet');
+
 require __DIR__.'/auth.php';
